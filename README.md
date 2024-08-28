@@ -87,9 +87,10 @@ az cognitiveservices account deployment create \
     --sku-name "Standard"
 ```
 
-## Run Chatbot
+## Clone and run chatbot code
 
 ```bash
+git clone https://github.com/aamini7/postgres-rag-llm-demo
 pip install -r requirements
 python chat.py --populate
 ```
