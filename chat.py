@@ -1,4 +1,5 @@
 import os
+import sys
 from textwrap import dedent
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -67,7 +68,12 @@ class ChatBot:
 
 def main():
     chat_bot = ChatBot()
-    chat_bot.load_file("knowledge.txt")
+
+    if sys.argv[1] == "--populate":
+        print("Loading embedding data into database...")
+        chat_bot.load_file("knowledge.txt")
+        print("Done loading data.")
+
     while True:
         q = input("Ask a question (q to exit): ")
         if q == "q":
